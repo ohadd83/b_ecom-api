@@ -150,8 +150,14 @@ pipeline {
                   }
          }
 
+// Manual approve production deploy 
 
-
+stage('Approve Production Deployment') {
+    steps {
+        input message: 'Deploy this version to PRODUCTION?',
+              ok: 'Deploy to Production'
+    }
+}
         
 //  deploy application
 
