@@ -152,12 +152,34 @@ pipeline {
 
 // Manual approve production deploy 
 
-stage('Approve Production Deployment') {
-    steps {
-        input message: 'Deploy this version to PRODUCTION?',
-              ok: 'Deploy to Production'
+//stage('Approve Production Deployment') {
+  //  steps {
+    //    input message: 'Deploy this version to PRODUCTION?',
+      //        ok: 'Deploy to Production'
+ //   }
+//}
+
+// Manual approve 
+
+stage('Approve Production Deploy') {
+
+    steps { 
+        input(
+            message: """
+                Production Deployment Approval
+
+                Application: ${IMAGE_NAME}
+                Version: ${IMAGE_TAG}
+                Build: ${BUILD_NUMBER}
+
+                Deploy this version to PRODUCTION?
+            """,
+            ok: "Deploy ${IMAGE_TAG}",
+            submitter: "ohad"
+             )
     }
 }
+
         
 //  deploy application
 
