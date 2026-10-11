@@ -3,7 +3,6 @@ from fastapi import APIRouter
 from app.database import products_db
 from app.models import Product
 
-
 router = APIRouter(
     prefix="/products",
     tags=["Products"]

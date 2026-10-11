@@ -1,8 +1,7 @@
 from fastapi import APIRouter, HTTPException
 
-from app.database import products_db, orders_db
+from app.database import orders_db, products_db
 from app.models import Order
-
 
 router = APIRouter(
     prefix="/orders",
