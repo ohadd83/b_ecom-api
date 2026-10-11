@@ -39,7 +39,18 @@ pipeline {
             }
         }
 
+    stage('Code Quality') {
+        steps {
+            sh '''
+                set -eu
 
+                python3 -m pip install -r requirements.txt
+                python3 -m pip install ruff pip-audit pytest-cov
+
+                ruff check app tests
+            '''
+        }
+    }
 // build docker image
 
         stage('Build Docker Image') {
