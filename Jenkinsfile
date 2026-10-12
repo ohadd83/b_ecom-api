@@ -175,12 +175,14 @@ pipeline {
          }
 
 // STG healthcheck 
-        stage('stg healtcheck') {
+        stage('stg Healt Check') {
             steps { 
               echo "test stg healtcheck "
 //            healtcheck 
+              sh '''
               curl -f "http://localhost:8002/health"
-              curl -f "http://localhost:8002/products/1"              
+              curl -f "http://localhost:8002/products/1"
+              '''              
         }
 
 }   
