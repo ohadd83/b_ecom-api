@@ -13,7 +13,7 @@ pipeline {
         // Application port on EC2
         APP_PORT = "8000"
         // app STG port on EC2
-        STG_APP_PORT = '8002'
+        STG_APP_PORT = "8002"
         // Jenkins build number becomes the image version
         IMAGE_TAG = "${BUILD_NUMBER}"
         // save the last successful build version
