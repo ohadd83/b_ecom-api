@@ -174,6 +174,18 @@ pipeline {
                   }
          }
 
+// STG healthcheck 
+        stage('stg healtcheck') {
+            steps { 
+              echo "test stg healtcheck "
+//            healtcheck 
+              curl -f "http://localhost:8002/health"
+              curl -f "http://localhost:8002/products/1"              
+        }
+
+}   
+      
+
 // Manual approve production deploy 
 
 //stage('Approve Production Deployment') {
