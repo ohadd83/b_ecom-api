@@ -180,8 +180,8 @@ pipeline {
               echo "test stg healtcheck "
 //            healtcheck 
               sh '''
-              curl -f "http://localhost:8002/health"
-              curl -f "http://localhost:8002/products/1"
+              curl -f "http://localhost:${STG_APP_PORT}/health"
+              curl -f "http://localhost:${STG_APP_PORT}/products/1"
               '''              
         }
 
