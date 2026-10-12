@@ -178,10 +178,11 @@ pipeline {
         stage('stg Healt Check') {
             steps { 
               echo "test stg healtcheck "
+              sleep 5
 //            healtcheck 
               sh '''
-              curl -f http://localhost:${STG_APP_PORT}/health
-              curl -f http://localhost:${STG_APP_PORT}/products
+                   curl -f http://localhost:${STG_APP_PORT}/health
+                   curl -f http://localhost:${STG_APP_PORT}/products
               '''              
         }
 
