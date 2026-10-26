@@ -79,7 +79,7 @@ pipeline {
                 sh '''
                     docker run -d \
                         --name ${CONTAINER_NAME}-test \
-                        -p 8001:8000 \
+                        -p 8002:8000 \
                         ${IMAGE_NAME}:${IMAGE_TAG}
                 '''
 
@@ -95,11 +95,11 @@ pipeline {
                
 
                 sh '''
-                    curl -f http://localhost:8001/health
+                    curl -f http://localhost:8002/health
                
                     curl -f  -X POST  -H "Content-Type: application/json" -d '{"product_id":1,"quantity":3}' http://localhost:8001/orders/
 
-                    curl -f http://localhost:8001/products/2
+                    curl -f http://localhost:8002/products/2
                 '''
             }
 
