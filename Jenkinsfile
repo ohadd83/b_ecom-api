@@ -17,7 +17,7 @@ pipeline {
         // Jenkins build number becomes the image version
         IMAGE_TAG = "${BUILD_NUMBER}"
         // save the last successful build version
-        ROLLBACK_FILE = "/var/lib/jenkins/last_successful_tag"
+        ROLLBACK_FILE = "/var/lib/jenkins/rollback/b_api_python/last_successful_tag"
     }
 
     stages {
