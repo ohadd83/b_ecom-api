@@ -314,7 +314,7 @@ stage('Approve Production Deploy') {
         echo "Starting rollback..."
 
         sh '''
-            ROLLBACK_TAG=$(cat /var/lib/jenkins/last_successful_tag)
+            ROLLBACK_TAG=$(cat /var/lib/jenkins/rollback/b_api_python/last_successful_tag)
             docker pull ${IMAGE_NAME}:${ROLLBACK_TAG}
 
             docker stop ${CONTAINER_NAME} || true
